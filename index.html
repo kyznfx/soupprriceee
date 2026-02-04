@@ -10,22 +10,29 @@
   <!-- Background particles -->
   <div id="particles"></div>
 
-  <!-- Hidden audio (unlocked by click) -->
-  <audio id="bgMusic" loop>
-    <source src="mp3.mp3" type="audio/mpeg">
-  </audio>
+  <audio id="bgMusic">
+  <source src="mp3.mp3" type="audio/mpeg">
+</audio>
 
-  <div class="card">
-    <h1>Will you be my Valentine? 💘</h1>
-    <p id="statusText">Choose wisely 😌</p>
+<div class="card" id="mainCard">
+  <h1>Will you be my Valentine? 💘</h1>
+  <p id="statusText">Choose wisely 😌</p>
 
-    <div class="buttons">
-      <button class="yes" id="yesBtn">YES 💖</button>
-      <button class="no" id="noBtn">NO 😡</button>
-      <button class="crash" id="crashBtn">CRASH 💀</button>
-    </div>
+  <div class="buttons">
+    <button class="yes" id="yesBtn">YES 💖</button>
+    <button class="no" id="noBtn">NO 😡</button>
+    <button class="crash" id="crashBtn">CRASH 💀</button>
   </div>
+</div>
+
+<!-- YES OVERLAY -->
+<div class="yes-overlay" id="yesOverlay">
+  <h1>YAYYYYY 💕💍</h1>
+  <p>You’re officially my Valentine 🥹💖</p>
+</div>
+
 
   <script src="script.js"></script>
 </body>
 </html>
+
