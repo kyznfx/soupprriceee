@@ -5,51 +5,37 @@
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(-45deg, #ff4d6d, #ff758f, #ffb3c1, #ffc6d9);
-  background-size: 400% 400%;
-  animation: gradient 12s ease infinite;
-  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #ff4d6d, #1a001f);
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-}
-
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  color: white;
 }
 
 /* Glass card */
 .card {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
   padding: 50px;
   text-align: center;
-  color: white;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  animation: popIn 0.8s ease;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  animation: pop 0.8s ease;
 }
 
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
 }
 
 p {
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .buttons {
@@ -57,23 +43,23 @@ p {
 }
 
 button {
+  padding: 16px 34px;
+  margin: 12px;
   font-size: 18px;
-  padding: 15px 30px;
-  margin: 10px;
   border: none;
-  border-radius: 15px;
+  border-radius: 18px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 .yes {
   background: #ff4d6d;
   color: white;
-  box-shadow: 0 0 20px #ff4d6d;
+  box-shadow: 0 0 25px #ff4d6d;
 }
 
 .no {
@@ -87,39 +73,26 @@ button:hover {
   color: white;
 }
 
-/* Fade out when YES clicked */
-.fade-out {
-  animation: fadeOut 0.8s forwards;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
-
 /* YES page */
 .yes-page {
-  animation: flash 1s infinite alternate;
+  animation: glow 1.2s infinite alternate;
 }
 
-@keyframes flash {
+@keyframes glow {
   from { filter: brightness(1); }
-  to { filter: brightness(1.2); }
+  to { filter: brightness(1.25); }
 }
 
-/* Floating hearts */
-.hearts div {
+/* Particles */
+#particles span {
   position: absolute;
-  bottom: -50px;
-  font-size: 24px;
+  font-size: 22px;
   animation: floatUp linear forwards;
 }
 
 @keyframes floatUp {
   to {
-    transform: translateY(-110vh);
+    transform: translateY(-120vh) rotate(360deg);
     opacity: 0;
   }
 }
