@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Will You Be My Valentine? 💖</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Valentine 💖</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Floating hearts -->
-  <div class="hearts"></div>
+  <!-- Background particles -->
+  <div id="particles"></div>
+
+  <!-- Hidden audio (unlocked by click) -->
+  <audio id="bgMusic" loop>
+    <source src="mp3.mp3" type="audio/mpeg">
+  </audio>
 
   <div class="card">
     <h1>Will you be my Valentine? 💘</h1>
-    <p>You only have one correct answer 😌</p>
+    <p id="statusText">Choose wisely 😌</p>
 
     <div class="buttons">
-      <button class="yes" onclick="yesClicked()">YES 💖</button>
+      <button class="yes" id="yesBtn">YES 💖</button>
       <button class="no" id="noBtn">NO 😡</button>
-      <button class="crash" onclick="crashTroll()">CRASH 💀</button>
+      <button class="crash" id="crashBtn">CRASH 💀</button>
     </div>
   </div>
 
