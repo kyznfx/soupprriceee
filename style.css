@@ -8,7 +8,7 @@ body {
   background: linear-gradient(-45deg, #ff4d6d, #ff758f, #ffb3c1, #ffc6d9);
   background-size: 400% 400%;
   animation: gradient 12s ease infinite;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,26 +21,26 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Glass Card */
+/* Glass card */
 .card {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
   border-radius: 25px;
   padding: 50px;
   text-align: center;
   color: white;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  animation: popIn 1s ease;
+  animation: popIn 0.8s ease;
 }
 
 @keyframes popIn {
   from {
-    transform: scale(0.8);
     opacity: 0;
+    transform: scale(0.85);
   }
   to {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -63,7 +63,7 @@ button {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 button:hover {
@@ -87,6 +87,18 @@ button:hover {
   color: white;
 }
 
+/* Fade out when YES clicked */
+.fade-out {
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
 /* YES page */
 .yes-page {
   animation: flash 1s infinite alternate;
@@ -95,9 +107,9 @@ button:hover {
 @keyframes flash {
   from { filter: brightness(1); }
   to { filter: brightness(1.2); }
-  
-
 }
+
+/* Floating hearts */
 .hearts div {
   position: absolute;
   bottom: -50px;
@@ -111,4 +123,3 @@ button:hover {
     opacity: 0;
   }
 }
-
