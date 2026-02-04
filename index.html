@@ -2,52 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> forever my baby 💖</title>
+  <title>Valentine 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Background particles -->
-  <div id="particles"></div>
-
+  <!-- MUSIC -->
   <audio id="bgMusic">
-  <source src="mp3.mp3" type="audio/mpeg">
-</audio>
+    <source src="mp3.mp3" type="audio/mpeg">
+  </audio>
 
-<div class="card" id="mainCard">
-  <h1>Will you be my Valentine? 💘</h1>
-  <p id="statusText">Choose wisely 😌</p>
+  <!-- MAIN CARD -->
+  <div class="card">
+    <h1>Will you be my Valentine? 💘</h1>
+    <p id="statusText">Choose wisely 😌</p>
 
-  <div class="buttons">
-    <button class="yes" id="yesBtn">YES 💖</button>
-    <button class="no" id="noBtn">NO 😡</button>
-    <button class="crash" id="crashBtn">CRASH 💀</button>
+    <div class="buttons">
+      <button id="yesBtn" class="yes">YES 💖</button>
+      <button id="noBtn" class="no">NO 😡</button>
+      <button id="crashBtn" class="crash">CRASH 💀</button>
+    </div>
   </div>
-</div>
 
-<!-- YES OVERLAY -->
-<div class="yes-overlay" id="yesOverlay">
-  <h1>YAYYYYY  🥰💕💍</h1>
-  <p>You’re officially my Valentine.
-    
-     I love you, my angel baby 💖</p>
-</div>
+  <!-- YES OVERLAY -->
+  <div id="yesOverlay" class="yes-overlay">
+    <div class="yes-content">
+      <h1>YAYYYYY 💕💍</h1>
+      <p>You’re officially my Valentine 🥹💖</p>
+    </div>
+  </div>
 
+  <!-- CRASH OVERLAY -->
+  <div id="crashOverlay" class="crash-overlay">
+    <h1>💀 SYSTEM FAILURE 💀</h1>
+    <p>Something went wrong…</p>
+    <button id="recoverBtn">RECOVER</button>
+  </div>
 
   <script src="script.js"></script>
-  
-<!-- CRASH OVERLAY -->
-<div class="crash-overlay" id="crashOverlay">
-  <h1>💀 SYSTEM FAILURE 💀</h1>
-  <p>Something went wrong…</p>
-  <button id="recoverBtn">RECOVER</button>
-</div>
-
-  
 </body>
 </html>
-
-
-
-
-
