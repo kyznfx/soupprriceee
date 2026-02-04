@@ -12,11 +12,17 @@
     <p>You’re officially my Valentine 🥹💖</p>
   </div>
 
-  <audio id="bgMusic">
-  <source src="mp3.mp3" type="audio/mpeg">
-</audio>
+  <script>
+    // Resume music from localStorage
+    const music = new Audio("mp3.mp3");
+    music.currentTime = localStorage.getItem("musicTime") || 0;
+    music.loop = true;
+    music.play();
 
+    setInterval(() => {
+      localStorage.setItem("musicTime", music.currentTime);
+    }, 500);
+  </script>
 
 </body>
 </html>
-
