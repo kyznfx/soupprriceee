@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ff4d6d, #ff758f, #ffb3c1, #ffc6d9);
+  background-size: 400% 400%;
+  animation: gradient 12s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass Card */
+.card {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 50px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: popIn 1s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  opacity: 0.9;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  font-size: 18px;
+  padding: 15px 30px;
+  margin: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+  box-shadow: 0 0 20px #ff4d6d;
+}
+
+.no {
+  background: #444;
+  color: white;
+  position: absolute;
+}
+
+.crash {
+  background: black;
+  color: white;
+}
+
+/* YES page */
+.yes-page {
+  animation: flash 1s infinite alternate;
+}
+
+@keyframes flash {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.2); }
+  
+
+}
+.hearts div {
+  position: absolute;
+  bottom: -50px;
+  font-size: 24px;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
