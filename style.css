@@ -315,3 +315,74 @@ button:hover {
   }
 }
 
+/* Romantic fonts */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.yes-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  color: white;
+  animation: glowPulse 2s infinite alternate;
+}
+
+/* Flower GIF */
+.flower-gif {
+  width: 160px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Subtitle style */
+.yes-sub {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+/* Love text */
+.love-message p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #fff;
+  opacity: 0.95;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 40px #ff4d6d;
+  }
+}
+
+/* Elegant text reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealText 1.2s ease forwards;
+}
+
+.delay1 { animation-delay: 0.8s; }
+.delay2 { animation-delay: 1.8s; }
+.delay3 { animation-delay: 3s; }
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
