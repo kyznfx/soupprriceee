@@ -15,7 +15,7 @@ yesBtn.addEventListener("click", () => {
   yesOverlay.classList.add("show");
 });
 
-/* NO BUTTON (FIXED TROLL MODE) */
+/* NO BUTTON (SMOOTH TROLL) */
 let noCount = 0;
 let isMoving = false;
 
