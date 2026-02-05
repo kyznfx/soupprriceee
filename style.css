@@ -208,3 +208,61 @@ button:hover {
   75% { transform: translate(2px,2px); }
   100% { transform: translate(0,0); }
 }
+
+/* GIF at top */
+.love-gif {
+  width: 120px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+}
+
+/* Glow animation for title */
+.glow {
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 40px #ff4d6d;
+  }
+}
+
+/* Typewriter effect */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid white;
+  width: 0;
+  margin: 0 auto;
+  animation: typing 3s steps(40, end) forwards,
+             blink 0.8s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* Fade-in messages */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+}
+
+.delay1 { animation-delay: 2s; }
+.delay2 { animation-delay: 3.5s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
