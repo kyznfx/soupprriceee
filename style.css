@@ -70,27 +70,98 @@ button:hover {
   color: white;
 }
 
-/* YES OVERLAY */
+/* =========================
+   IMPROVED YES SCREEN
+========================= */
+
 .yes-overlay {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle, #ff4d6d, #1a001f);
+  background: radial-gradient(circle at center, #ff6f91, #1a001f);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.8s ease;
   z-index: 30;
+  overflow: hidden;
 }
 
 .yes-overlay.show {
   opacity: 1;
+  pointer-events: all;
 }
 
-.yes-content {
+/* Floating hearts background */
+.heart-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.heart-bg::before,
+.heart-bg::after {
+  content: "💖 💕 💗 💓 💞";
+  position: absolute;
+  font-size: 40px;
+  animation: floatHearts 15s linear infinite;
+  opacity: 0.4;
+}
+
+.heart-bg::after {
+  animation-duration: 20s;
+  left: 50%;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+  }
+}
+
+/* Romantic card */
+.yes-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  padding: 60px 50px;
+  border-radius: 30px;
   text-align: center;
-  font-size: 2rem;
+  max-width: 500px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 1s ease;
+}
+
+.yes-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.yes-sub {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.love-message p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* Entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* CRASH OVERLAY */
