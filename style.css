@@ -80,23 +80,19 @@ button:hover {
   pointer-events: all;
 }
 
-/* Floating hearts background */
-.floating-hearts::before {
-  content: "💗 💖 💕 💓 💞";
+/* Floating petals background */
+.petal-bg::before {
+  content: "🌹 🌸 🌺 🌷 💮";
   position: absolute;
   width: 100%;
-  font-size: 40px;
+  font-size: 35px;
   opacity: 0.3;
-  animation: floatHearts 18s linear infinite;
+  animation: floatPetals 20s linear infinite;
 }
 
-@keyframes floatHearts {
-  from {
-    transform: translateY(100vh);
-  }
-  to {
-    transform: translateY(-120vh);
-  }
+@keyframes floatPetals {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-120vh); }
 }
 
 /* Romantic card */
@@ -108,6 +104,40 @@ button:hover {
   text-align: center;
   max-width: 520px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+  animation: cardFloat 4s ease-in-out infinite,
+             cardEntrance 1s ease;
+}
+
+/* Card floating animation */
+@keyframes cardFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Entrance */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Flower GIF */
+.flower-gif {
+  width: 140px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 
 /* Title */
@@ -115,6 +145,16 @@ button:hover {
   font-family: "Great Vibes", cursive;
   font-size: 3.5rem;
   margin-bottom: 25px;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 40px #ff4d6d;
+  }
 }
 
 /* Messages */
