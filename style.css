@@ -63,6 +63,7 @@ button:hover {
   background: #444;
   color: white;
   position: absolute;
+  transition: all 0.3s ease;
 }
 
 .crash {
