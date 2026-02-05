@@ -6,7 +6,7 @@ body {
   margin: 0;
   height: 100vh;
   background: radial-gradient(circle at top, #ff4d6d, #1a001f);
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@ body {
   overflow: hidden;
 }
 
-/* CARD */
+/* MAIN CARD */
 .card {
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(20px);
@@ -25,19 +25,9 @@ body {
   z-index: 10;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-p {
-  opacity: 0.85;
-}
-
-/* BUTTONS */
 .buttons {
   margin-top: 30px;
   position: relative;
-  z-index: 20;
 }
 
 button {
@@ -71,22 +61,18 @@ button:hover {
   color: white;
 }
 
-/* =========================
-   IMPROVED YES SCREEN
-========================= */
-
+/* YES OVERLAY */
 .yes-overlay {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, #ff6f91, #1a001f);
+  background: radial-gradient(circle, #ff6f91, #1a001f);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.8s ease;
+  transition: opacity 1s ease;
   z-index: 30;
-  overflow: hidden;
 }
 
 .yes-overlay.show {
@@ -95,70 +81,63 @@ button:hover {
 }
 
 /* Floating hearts background */
-.heart-bg {
+.floating-hearts::before {
+  content: "💗 💖 💕 💓 💞";
   position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.heart-bg::before,
-.heart-bg::after {
-  content: "💖 💕 💗 💓 💞";
-  position: absolute;
+  width: 100%;
   font-size: 40px;
-  animation: floatHearts 15s linear infinite;
-  opacity: 0.4;
-}
-
-.heart-bg::after {
-  animation-duration: 20s;
-  left: 50%;
+  opacity: 0.3;
+  animation: floatHearts 18s linear infinite;
 }
 
 @keyframes floatHearts {
-  0% {
-    transform: translateY(100vh) rotate(0deg);
+  from {
+    transform: translateY(100vh);
   }
-  100% {
-    transform: translateY(-120vh) rotate(360deg);
+  to {
+    transform: translateY(-120vh);
   }
 }
 
 /* Romantic card */
 .yes-card {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255,255,255,0.15);
   backdrop-filter: blur(25px);
   padding: 60px 50px;
   border-radius: 30px;
   text-align: center;
-  max-width: 500px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 1s ease;
+  max-width: 520px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
 }
 
-.yes-title {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.yes-sub {
-  font-size: 1.4rem;
-  opacity: 0.9;
+/* Title */
+.romantic-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 3.5rem;
   margin-bottom: 25px;
 }
 
-.love-message p {
-  font-size: 1.1rem;
-  margin: 10px 0;
-  line-height: 1.6;
+/* Messages */
+.message {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+  margin: 12px 0;
+  font-size: 1.2rem;
 }
 
-/* Entrance animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
+.line1 { animation-delay: 0.8s; }
+.line2 { animation-delay: 1.8s; }
+.line3 { animation-delay: 3s; }
+.line4 { animation-delay: 4.5s; }
+
+.signature {
+  margin-top: 25px;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.6rem;
+}
+
+@keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
@@ -169,7 +148,7 @@ button:hover {
 .crash-overlay {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle, #000, #400);
+  background: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -185,17 +164,6 @@ button:hover {
   pointer-events: all;
 }
 
-.crash-overlay button {
-  margin-top: 20px;
-  padding: 14px 30px;
-  font-size: 18px;
-  border-radius: 14px;
-  border: none;
-  background: #ff4d6d;
-  color: white;
-  cursor: pointer;
-}
-
 /* SHAKE */
 .shake {
   animation: shake 0.1s infinite;
@@ -208,181 +176,3 @@ button:hover {
   75% { transform: translate(2px,2px); }
   100% { transform: translate(0,0); }
 }
-
-/* GIF at top */
-.love-gif {
-  width: 120px;
-  margin-bottom: 15px;
-  border-radius: 20px;
-}
-
-/* Glow animation for title */
-.glow {
-  animation: glowPulse 2s infinite alternate;
-}
-
-@keyframes glowPulse {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 40px #ff4d6d;
-  }
-}
-
-/* Typewriter effect */
-.typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid white;
-  width: 0;
-  margin: 0 auto;
-  animation: typing 3s steps(40, end) forwards,
-             blink 0.8s infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  50% { border-color: transparent }
-}
-
-/* Fade-in messages */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s forwards;
-}
-
-.delay1 { animation-delay: 2s; }
-.delay2 { animation-delay: 3.5s; }
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Romantic GIF */
-.love-gif {
-  width: 140px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Title glow */
-.yes-title {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  animation: glowPulse 2s infinite alternate;
-}
-
-@keyframes glowPulse {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 40px #ff4d6d;
-  }
-}
-
-/* Elegant text reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px) scale(0.98);
-  animation: revealText 1s ease forwards;
-}
-
-.delay1 { animation-delay: 0.8s; }
-.delay2 { animation-delay: 1.8s; }
-.delay3 { animation-delay: 3s; }
-
-@keyframes revealText {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Romantic fonts */
-body {
-  font-family: "Poppins", sans-serif;
-}
-
-.yes-title {
-  font-family: "Great Vibes", cursive;
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-  color: white;
-  animation: glowPulse 2s infinite alternate;
-}
-
-/* Flower GIF */
-.flower-gif {
-  width: 160px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-/* Subtitle style */
-.yes-sub {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: #fff;
-}
-
-/* Love text */
-.love-message p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #fff;
-  opacity: 0.95;
-}
-
-/* Glow animation */
-@keyframes glowPulse {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 40px #ff4d6d;
-  }
-}
-
-/* Elegant text reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: revealText 1.2s ease forwards;
-}
-
-.delay1 { animation-delay: 0.8s; }
-.delay2 { animation-delay: 1.8s; }
-.delay3 { animation-delay: 3s; }
-
-@keyframes revealText {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
